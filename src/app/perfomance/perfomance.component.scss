@@ -1,13 +1,11 @@
-.full-width-table {
-  width: 100%;
-}
-
 .grid-container {
-  margin: 20px;
+  margin: 35px;
+  max-height: fit-content;
 }
 
-.dashboard-card {
-  position: absolute;
+.card {
+  // position: absolute;
+  max-height: 300px;
   top: 15px;
   left: 15px;
   right: 15px;

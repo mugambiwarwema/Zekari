@@ -1,55 +1,62 @@
-<div class="mat-elevation-z8">
-  <table mat-table class="full-width-table" matSort aria-label="Elements">
-    <!-- Rank Column -->
-    <ng-container matColumnDef="rank_out_of">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Rank_Out_Of</th>
-      <td mat-cell *matCellDef="let row">{{row.rank_out_of}}</td>
-    </ng-container>
+<div class="grid-container">
+  <h1 class="mat-h1">Results</h1>
+  <mat-grid-list cols="1">
+    <div class="mat-elevation-z10">
+      <table mat-table class="full-width-table" matSort aria-label="Elements">
+        <!-- Subject Name Column -->
+        <ng-container matColumnDef="subject_name">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Subject Name</th>
+          <td mat-cell *matCellDef="let row">{{row.subject_name}}</td>
+        </ng-container>
+        
+        <!-- Grade Column -->
+        <ng-container matColumnDef="grade">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Grade</th>
+          <td mat-cell *matCellDef="let row">{{row.grade}}</td>
+        </ng-container>
 
-    <!-- Deviation Column -->
-    <ng-container matColumnDef="deviation">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Deviation</th>
-      <td mat-cell *matCellDef="let row">{{row.deviation}}</td>
-    </ng-container>
-
-     <!-- Subject Name Column -->
-     <ng-container matColumnDef="subject_name">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Subject Name</th>
-      <td mat-cell *matCellDef="let row">{{row.subject_name}}</td>
-    </ng-container>
-
-     <!-- Grade Column -->
-     <ng-container matColumnDef="grade">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>grade</th>
-      <td mat-cell *matCellDef="let row">{{row.grade}}</td>
-    </ng-container>
-
-     <!-- Comment Column -->
-     <ng-container matColumnDef="comment">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Comment</th>
-      <td mat-cell *matCellDef="let row">{{row.comment}}</td>
-    </ng-container>
-
-     <!-- Rank Column -->
-     <ng-container matColumnDef="rank">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Rank</th>
-      <td mat-cell *matCellDef="let row">{{row.rank}}</td>
-    </ng-container>
-
-     <!-- Score Column -->
-     <ng-container matColumnDef="score">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header>Score</th>
-      <td mat-cell *matCellDef="let row">{{row.score}}</td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-
-  <mat-paginator #paginator
-      [length]="dataSource?.data.length"
-      [pageIndex]="0"
-      [pageSize]="10"
-      [pageSizeOptions]="[5, 10, 20, 50]">
-  </mat-paginator>
+        <!-- Score Column -->
+        <ng-container matColumnDef="score">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Score</th>
+          <td mat-cell *matCellDef="let row">{{row.score}}</td>
+        </ng-container>
+    
+        <!-- Rank Column -->
+        <ng-container matColumnDef="rank_out_of">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Rank_Out_Of</th>
+          <td mat-cell *matCellDef="let row">{{row.rank_out_of}}</td>
+        </ng-container>
+    
+        <!-- Deviation Column -->
+        <ng-container matColumnDef="deviation">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Deviation</th>
+          <td mat-cell *matCellDef="let row">{{row.deviation}}</td>
+        </ng-container>
+    
+         <!-- Comment Column -->
+         <ng-container matColumnDef="comment">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Comments</th>
+          <td mat-cell *matCellDef="let row">{{row.comment}}</td>
+        </ng-container>
+    
+         <!-- Rank Column -->
+         <ng-container matColumnDef="rank">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header>Rank</th>
+          <td mat-cell *matCellDef="let row">{{row.rank}}</td>
+        </ng-container>
+    
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+      </table>
+    
+      <mat-paginator #paginator
+          [length]="dataSource?.data.length"
+          [pageIndex]="0"
+          [pageSize]="15"
+          [pageSizeOptions]="[10, 25, 50]">
+      </mat-paginator>
+    </div>
+    
+  </mat-grid-list>
 </div>
+

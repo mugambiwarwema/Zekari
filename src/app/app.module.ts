@@ -15,14 +15,26 @@ import { ResultsComponent } from './results/results.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatSortModule } from '@angular/material/sort';
+import { ProfileComponent } from './profile/profile.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { PerfomanceComponent } from './perfomance/perfomance.component';
+import { MatChipsModule } from '@angular/material/chips';
+import { ChartsModule } from '@rinminase/ng-charts';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     SideMenuComponent,
-    ResultsComponent
+    ResultsComponent,
+    ProfileComponent,
+    PerfomanceComponent
   ],
   imports: [
+    // NgxEchartsModule.forRoot({echarts: () => import('echarts')}),
+    ChartsModule,
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
@@ -34,7 +46,11 @@ import { MatSortModule } from '@angular/material/sort';
     MatListModule,
     MatTableModule,
     MatPaginatorModule,
-    MatSortModule
+    MatSortModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule,
+    MatChipsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

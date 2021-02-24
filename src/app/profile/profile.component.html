@@ -1,0 +1,123 @@
+<div class="grid-container">
+  <h1 class="mat-h1">Profile</h1>
+  <mat-grid-list cols="2" rowHeight="200px">
+    <mat-grid-tile [colspan]="1" [rowspan]="3">
+      <mat-card class="dashboard-card mat-elevation-z8">
+        <mat-card-header>
+          <img mat-card-avatar class="header-image" src="{{studentData.student_photo}}">
+          <mat-card-title color="primary">
+            {{studentData.student_name}}            
+         </mat-card-title>
+        </mat-card-header>
+        <mat-card-content class="dashboard-card-content">
+          <mat-list role="list">
+            <div mat-subheader>Report Details</div>
+
+            <mat-list-item >
+              <mat-icon mat-list-icon>account_box</mat-icon>
+              <div mat-line> <strong>Admission Number :</strong> {{studentData.student_admission_number}}</div>
+            </mat-list-item>
+
+            <mat-list-item >
+              <mat-icon mat-list-icon>account_balance</mat-icon>
+              <div mat-line> <strong>Class :</strong> {{studentData.class_name}}</div>
+            </mat-list-item>
+
+
+            <mat-list-item >
+              <mat-icon mat-list-icon>done_all</mat-icon>
+              <div mat-line> <strong>Exam :</strong> {{studentData.exam_name}}</div>
+            </mat-list-item>
+
+            <mat-list-item >
+              <mat-icon mat-list-icon>grading</mat-icon>
+              <div mat-line> <strong>Grade :</strong> {{studentData.mean_grade}}</div>
+            </mat-list-item>
+
+          </mat-list>
+          <hr>
+          
+        </mat-card-content>
+        <mat-card-footer>
+          <mat-list role="list">
+            <div mat-subheader>Principal's Remarks</div>
+            <mat-list-item >
+              <mat-icon mat-list-icon>fact_check</mat-icon>
+              <div mat-line>{{studentData.principals_remarks}}</div>
+            </mat-list-item>
+
+            <div mat-subheader>Class Teacher's Remarks</div>
+            <mat-list-item >
+              <mat-icon mat-list-icon>fact_check</mat-icon>
+              <div mat-line>{{studentData.class_teachers_remarks}}</div>
+            </mat-list-item>
+          </mat-list>          
+        </mat-card-footer>
+      </mat-card>
+
+    </mat-grid-tile>
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card mat-elevation-z5">
+        <mat-card-header>
+          <mat-card-title>
+            Overall Position
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-footer class="dashboard-card-content">
+
+          <mat-chip-list class="mat-chip-list-stacked">
+            <mat-chip selected>{{studentData.overall_position.position}} out of {{studentData.overall_position.position_out_of}}</mat-chip>
+          </mat-chip-list>
+          
+          <mat-chip-list class="mat-chip-list-stacked">
+            <mat-chip selected color="accent">Deviation: {{studentData.overall_position.deviation}}</mat-chip>
+          </mat-chip-list>
+        
+        </mat-card-footer>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card mat-elevation-z5">
+        <mat-card-header>
+          <mat-card-title>
+            Stream Position
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-footer class="dashboard-card-content">
+
+          <mat-chip-list class="mat-chip-list-stacked">
+            <mat-chip selected>{{studentData.stream_position.position}} out of {{studentData.stream_position.position_out_of}}</mat-chip>
+          </mat-chip-list>
+          
+          <mat-chip-list class="mat-chip-list-stacked">
+            <mat-chip selected color="accent">Deviation: {{studentData.stream_position.deviation}}</mat-chip>
+          </mat-chip-list>
+        
+        </mat-card-footer>
+      </mat-card>
+    </mat-grid-tile>
+
+    <mat-grid-tile [colspan]="1" [rowspan]="1">
+      <mat-card class="dashboard-card mat-elevation-z5">
+        <mat-card-header>
+          <mat-card-title>
+            Mean Marks
+          </mat-card-title>
+        </mat-card-header>
+        <mat-card-footer class="dashboard-card-content">
+
+          <mat-chip-list class="mat-chip-list-stacked">
+            <mat-chip selected>{{studentData.mean_marks.avg_score}}</mat-chip>
+          </mat-chip-list>
+          
+          <mat-chip-list class="mat-chip-list-stacked">
+            <mat-chip selected color="accent">Deviation: {{studentData.mean_marks.deviation}}</mat-chip>
+          </mat-chip-list>
+        
+        </mat-card-footer>
+      </mat-card>
+    </mat-grid-tile>
+
+  </mat-grid-list>
+</div>

@@ -16,7 +16,7 @@ export class ResultsComponent implements AfterViewInit, OnInit {
   dataSource: ResultsDataSource;
 
   /** Columns displayed in the table. Columns IDs can be added, removed, or reordered. */
-  displayedColumns = ['rank_out_of', 'deviation', 'subject_name', 'grade', 'comment', 'rank', 'score' ];
+  displayedColumns = ['subject_name', 'score', 'grade', 'rank', 'rank_out_of', 'deviation','comment'];
 
   ngOnInit() {
     this.dataSource = new ResultsDataSource();
