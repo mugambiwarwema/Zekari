@@ -5,10 +5,10 @@ import { ProfileComponent } from './profile/profile.component';
 import { ResultsComponent } from './results/results.component';
 
 const routes: Routes = [
-{path: 'results', component: ResultsComponent},
-{path: 'profile', component: ProfileComponent},
-{path: 'perfomance', component: PerfomanceComponent}
-
+  { path: '', redirectTo: '/profile', pathMatch: 'full' },
+  {path: 'results', component: ResultsComponent},
+  {path: 'profile', component: ProfileComponent},
+  {path: 'perfomance', component: PerfomanceComponent}
 ];
 
 @NgModule({

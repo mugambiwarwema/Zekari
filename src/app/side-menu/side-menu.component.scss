@@ -4,6 +4,7 @@
 
 .sidenav {
   width: 200px;
+  text-align: center;
 }
 
 .sidenav .mat-toolbar {
@@ -12,6 +13,12 @@
 
 .mat-toolbar.mat-primary {
   position: sticky;
-  top: 0;
-  z-index: 1;
+  z-index: 10;
+}
+
+.my-button{
+  width: 190px!important;
+  min-width: unset!important;
+  text-align: left;
+  margin-bottom: 10px;
 }

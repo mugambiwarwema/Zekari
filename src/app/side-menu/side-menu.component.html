@@ -3,12 +3,25 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar color="primary"></mat-toolbar>
+    <mat-toolbar></mat-toolbar>
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
-      <a mat-list-item href="/profile">Profile</a>
-      <a mat-list-item routerLink="/results">Results</a>
-      <a mat-list-item href="/perfomance">Perfomance</a>
+
+      <button class="my-button" mat-raised-button color="accent" (click)="profileLink();">
+        <mat-icon>reorder</mat-icon>
+        Profile
+      </button>
+      <br/>
+      <button class="my-button" mat-raised-button color="accent" (click)="resultsLink();">
+        <mat-icon>reorder</mat-icon>
+        Results
+      </button>
+      <br/>
+      <button class="my-button" mat-raised-button color="accent" (click)="perfomanceLink();">
+        <mat-icon>reorder</mat-icon>
+        Perfomance
+      </button>
+
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
